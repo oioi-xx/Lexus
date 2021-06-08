@@ -1,0 +1,358 @@
+window.PostContents = (function(){
+
+    var _param_values = ['/about', '/winner1', '/winner2', '/winner3', '/winner4'];
+    var _open_step = 1;
+    var _default_step = 1;
+
+    var _arrMenus = [
+        '.tab-feature-1', // about
+        '.tab-feature-2',
+        '.tab-feature-3',
+        '.tab-feature-4',
+        '.tab-feature-5'];
+    var _arrContents = [
+        '.award-feature-1', // about
+        '.award-feature-2',
+        '.award-feature-3',
+        '.award-feature-4',
+        '.award-feature-5'];
+
+    var _page_tracking_name = [
+        'post_cmp_2021_about',
+        'post_cmp_2021_award_winner1',
+        'post_cmp_2021_award_winner2',
+        'post_cmp_2021_award_winner3',
+        'post_cmp_2021_award_winner4'];
+    var _scrollTop = 0;
+    var _motionList = [];
+    var _arrImgPath = [];
+    var _arrImgStart = [];
+    var _arrImgEnd = [];
+    var _arrMoveTop = [];
+
+
+    var _init = function(){
+        //console.log('------------------------------------------ post contents init');
+        _addEvent();
+        if(!window.GlobalVars.isMobile){
+            _setImg();
+            _setMotionList();
+            window.setTimeout(function(){
+                _onScroll();
+            },500);
+
+        }
+        _onCheck_hash();
+    }
+
+    // 이벤트 ADD
+    var _addEvent = function(){
+        var isDesktop = $('html').hasClass('desktop')
+        if(isDesktop){
+            $(".btn-side").on('mouseover', _onOver_menu)
+            $(".btn-side").on('mouseout', _onOut_menu)
+        }
+
+        window.addEventListener("hashchange", _onChange_hash, false);
+
+        $(".js-btn-fb").on('click', _onClick_fb);
+        $(".js-btn-link").on('click', _onClick_link);
+        if(!window.GlobalVars.isMobile){
+            $(window).on('scroll', _onScroll);
+        }
+
+    }
+
+    var _setImg = function(){
+        var montionLen = $('.motion').length;
+
+        for(var i = 0; i<montionLen; i++){
+            var start = $('.motion').eq(i).data('start');
+            var end = $('.motion').eq(i).data('end');
+            var path = $('.motion').eq(i).data('img-path');
+            var moveTop = $('.motion').eq(i).data('move-top');
+
+            _arrImgPath.push(path);
+            _arrImgStart.push(start);
+            _arrImgEnd.push(end);
+            _arrMoveTop.push(moveTop);
+
+            for(var j=start; j<=end; j++){
+                var imgUrl = _arrImgPath[i]+_checkCipher(j)+'.png';
+                var imgEle = '<img src="'+imgUrl+'">'
+                $('.motion').eq(i).append(imgEle);
+            }
+        }
+    }
+
+    var _onScroll = function(){
+        var top = _getScrollPosY();
+
+        if (_scrollTop != top) {
+            _scrollTop = top;
+            _scrollHandler(_scrollTop);
+        }
+    }
+
+    // 현재 스크롤 Y 값
+    var _getScrollPosY = function() {
+        var doc = document.documentElement;
+        var top = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
+        return top;
+    }
+
+
+    var _setMotionList = function(){
+        _motionList = $('.motion');
+    }
+
+    var _scrollHandler = function (scrollTop) {
+        if(_motionList.length != 0){
+            _setElementScroll(_motionList, scrollTop);
+        }
+    }
+
+    var _setElementScroll = function (list, scrollTop) {
+        for (var i = 0; i < list.length; i++) {
+            _setElementFocus($(list[i]), i, scrollTop);
+        }
+    }
+
+
+
+    var _moveObj_blue = {top:0}
+    var _moveObj_black = {top:0}
+    var _arrMoveObj = [_moveObj_blue, _moveObj_black];
+    var _setElementFocus = function (elem, index, scrollTop) {
+        var rect = elem[0].getBoundingClientRect();
+        var tempST = parseInt(scrollTop);
+        var start = Math.floor(elem.offset().top-$(window).height())+100;
+        var end = Math.floor(elem.offset().top + rect.height)-100;
+
+
+        TweenLite.killTweensOf(_arrMoveObj[index]);
+        TweenLite.to(_arrMoveObj[index], 0.6, {top:tempST, onUpdate:function(){
+
+                if(_arrMoveObj[index].top < start){
+                    _arrMoveObj[index].top = start;
+                }else if(_arrMoveObj[index].top > end){
+                    _arrMoveObj[index].top = end;
+                }
+
+                var imgNum = _linearFunc(_arrMoveObj[index].top, start, end, _arrImgStart[index], _arrImgEnd[index]);
+                _chaneImage(index, imgNum);
+               // console.log("index : ", index, imgNum)
+
+                var yy = _linearFunc(Math.floor(_arrMoveObj[index].top), start, end, 0, _arrMoveTop[index]);
+                /*if(index==1){
+                    console.log(Math.floor(_arrMoveObj[index].top), yy, start, end, end-start, _arrMoveTop[index])
+                }*/
+                 _changeTop(index, yy);
+            },ease: Expo.easeOut
+        });
+
+       /*if(tempST < start){
+            tempST = start;
+        }else if(tempST > end){
+            tempST = end;
+        }
+
+
+       var imgNum = _linearFunc(tempST, start, end, _arrImgStart[index], _arrImgEnd[index]);
+        _chaneImage(index, imgNum);
+
+        var tt = _linearFunc(tempST, start, end, 0, _arrMoveTop[index]);
+        _changeTop(index, tt);*/
+
+    }
+
+    var _linearFunc = function(x, a, b, c, d){
+        var y = (d-c)/(b-a)*(x-a)+c;
+        return parseInt(y);
+    }
+
+    var _chaneImage = function(index, num){
+        //console.log(index, num)
+        var imgNum = _checkCipher(num);
+        var imgUrl = _arrImgPath[index]+imgNum+'.png';
+        $('.motion').eq(index).css('background-image', 'url("'+imgUrl+'")');
+    }
+
+    var _changeTop = function(index, num){
+        $('.motion').eq(index).css('transform', 'translateY('+num+'px)');
+    }
+
+    var _checkCipher = function(num){
+        var temp = '';
+
+        if(num >= 0 && num < 10){
+            temp = '00'+num;
+        }else if(num>9 && num <100){
+            temp = '0'+num;
+        }else{
+            temp = num;
+        }
+        return temp;
+    }
+
+    var _onClick_fb = function(e){
+        console.log('click fb');
+        //https://www.facebook.com/sharer/sharer.php?u=PAGE_URL
+        //var url = 'https://www.facebook.com/sharer/sharer.php?u='+'https://lexus.co.kr/contents/2019-lexus-creative-masters/award/'
+        var shareUrl = 'https://lexus.co.kr/contents/2021-lexus-creative-masters/award/';
+        var url = 'https://www.facebook.com/sharer/sharer.php?u='+shareUrl;
+        window.open(url, '', 'scrollbars=no, width=600, height=600');
+        return false;
+    }
+
+    var _onClick_link = function(e){
+        /* Get the text field */
+        var copyText = document.getElementById("clipboard");
+
+        var isIOS = $('html').hasClass('ios');
+        if(isIOS){
+            _iosCopyToClipboard(copyText);
+        }else{
+            _copyToClipboard(copyText);
+        }
+
+
+        /* Alert the copied text */
+        alert("클립보드에 복사 되었습니다.");
+        return false;
+    }
+
+    var _copyToClipboard = function(copyText){
+        /* Select the text field */
+        copyText.select();
+
+        /* Copy the text inside the text field */
+        document.execCommand("copy");
+    }
+
+    var _iosCopyToClipboard = function(el) {
+        var oldContentEditable = el.contentEditable,
+            oldReadOnly = el.readOnly,
+            range = document.createRange();
+
+        el.contentEditable = true;
+        el.readOnly = false;
+        range.selectNodeContents(el);
+
+        var s = window.getSelection();
+        s.removeAllRanges();
+        s.addRange(range);
+
+        el.setSelectionRange(0, 999999); // A big number, to cover anything that could be inside the element.
+
+        el.contentEditable = oldContentEditable;
+        el.readOnly = oldReadOnly;
+
+        document.execCommand('copy');
+    }
+
+    var _onOver_menu = function(e){
+        $(".btn-side").removeClass('current');
+        $(e.currentTarget).addClass('js-over');
+
+    }
+    var _onOut_menu = function(e){
+        $(e.currentTarget).removeClass('js-over');
+        $(".btn-side").eq(1).addClass('current');
+    }
+
+
+
+    // 해시 체크
+    var _onCheck_hash = function(){
+        var hash = window.location.hash;
+        var len = _open_step;
+        for(var i = 0; i<len; i++){
+            if(hash.split("#")[1] == _param_values[i]){
+
+                //console.log(hash.split("#")[1], _param_values[i])
+                _change_contents(i);
+
+                // 작가별 페이지 트래킹
+                Tracking.send_pageView(_page_tracking_name[i]);
+                return;
+            }
+        }
+        _setDefault_hash();
+    }
+
+
+    // 기본 해시 설정하기
+    var _setDefault_hash = function(){
+        window.location.hash = _param_values[_default_step-1];
+    }
+
+    // 해시 변경 이벤트
+    var _onChange_hash = function(e){
+        _onCheck_hash();
+    }
+
+    // 컨텐츠 변경하기
+    var _change_contents = function(index){
+        _onHide_contents();
+        _onShow_contents(index);
+    }
+
+    // 컨텐츠 보여주기
+    var _onShow_contents = function(index){
+        _on_menu(index);
+        _on_contents(index)
+    }
+
+    // 컨텐츠 감추기
+    var _onHide_contents = function(){
+        _off_menu();
+        _off_contents()
+    }
+
+    // 탭메뉴 활성화 시키기
+    var _on_menu = function(index){
+        var ele = document.querySelector(_arrMenus[index]);
+        DF.utils.addClass(ele, 'active')
+    }
+
+    // 탭메뉴 비활성화 시키기
+    var _off_menu = function(){
+        var len = _arrMenus.length;
+        for(var i=0; i<len; i++){
+            var ele = document.querySelector(_arrMenus[i])
+            DF.utils.removeClass(ele, 'active')
+        }
+    }
+
+    // 컨텐츠 활성화 시키기
+    var _on_contents = function(index){
+        var ele = document.querySelector(_arrContents[index]);
+        if(ele != null){
+            DF.utils.addClass(ele, 'active')
+            DF.utils.addClass(ele, 'add-stage')
+        }
+    }
+
+    // 컨텐츠 비활성화 시키기
+    var _off_contents = function(){
+        var len = _arrContents.length;
+        for(var i=0; i<len; i++){
+            var ele = document.querySelector(_arrContents[i])
+            if(ele != null){
+                DF.utils.removeClass(ele, 'active')
+            }
+        }
+    }
+
+    return{
+        init : _init
+    }
+
+})();
+
+
+
+(function(){
+    window.PostContents.init();
+})()

@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />   
+    <!-- 마이크로소프트에서 만든 익스플로러 브라우저는 호환성 보기 모드가 존재하는데 이는 사용자가 지원하는 브라우저에 따라 오래된 브라우저에서 정상적으로 출력되지 않는 이슈 // 모든 IE 브라우저에 호환성보기를 무시 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 뷰포트: 보임창 / 가로=기기가로너비 , 기본배율: 100  처음 페이지 로딩시 확대/축소가 되지 않은 원래 크기-->
+    <meta name="author" content="LEXUS">
+    <meta name="keywords" content="반응형, LEXUS">
+    <meta name="description" content="LEXUS 사이트 입니다.">
+    <title> LEXUS</title>
+	<link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/swiper.css"/>
+	<link rel="stylesheet" href="css/jquery.bxslider.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <!--[if lt IE 9]>
+        <link rel="stylesheet" type="text/css" href="css/style2.css">
+    <![endif]-->
+    <script src='js/lib/jquery.min_1.12.4.js'></script>
+	<script src="js/prefixfree.min.js"></script>
+	<script src='js/lib/jquery.easing.1.3.js'></script>
+	<script src='js/lib/modernizr-custom.js'></script>
+	<script src="js/iframe_api.js"></script>
+    <script src="js/movie.js"></script>	
+	<script src='js/menu_hover.js' defer></script>
+	<script src='js/scroll.js' defer></script>
+	<script src='js/script.js' defer></script>
+	<script src="js/swiper.min.js"></script>
+	<script src="js/jquery.bxslider.js"></script>
+	
+	 <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/css3-mediaqueries.js"></script>
+    <![endif]-->  
+</head>
+<body>
+    <div id="wrap">
+        <div id="sideMenu">
+            <div class="side_menu">
+                <ul>
+                    <li><a href="#"><img src="images/icon_quick_benefit.svg" width="23" height="24" alt="">구매혜택</a></li>
+                    <li><a href="#"><img src="images/icon_quick_estn.svg" width="29" height="24"alt="">견적조회</a></li>
+                    <li><a href="#"><img src="images/icon_quick_drive.svg" width="21" height="24" alt="">시승 신청</a></li>
+                    <li><a href="#"><img src="images/icon_quick_showroom.svg" width="17" height="24" alt="">전시장 조회</a></li>
+                    <li><a href="#"><img src="images/icon_quick_service.svg"  width="24" height="24"alt="">고객 서비스</a></li>
+                    <li><a href="#"><img src="images/icon_quick_connect_to.svg"  width="23" height="24" alt="">커넥트루</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="mainWrap" >
+            <header id="header">
+                <div class="container">
+                    <div class="logo">
+                        <a href="#"><img src="images/logo_lexus.png" alt=""></a>
+                        <a class="logo_w" href="#"><img src="images/logo_lexus_w.png" alt=""></a>
+                    </div>
+                    <div id="nav">
+                        <div class="nav_wrap">
+                            <ul class="menu cf">
+                                <li class="menu_tit">
+                                    <a href="#">LS</a>
+                                    <div class="twoD">
+                                    	<ul class="sub_nav">
+                                    	    <li><a href="#"><img src="images/concept_LSplus_car_type_A.jpg" alt="">LS 500h 2WD </a><p>
+											HYBRID <span>|</span> 3,456cc <span>|</span>149,400,000원</p></li>
+                                    	    <li><a href="#"><img src="images/LS_500h_car_type_A_2.jpg" alt="">LS 500h 2WD </a><p>
+											HYBRID <span>|</span> 3,456cc <span>|</span>149,400,000원</p></li>
+                                    	    <li><a href="#"><img src="images/LS_500h-awd_car_type_A_2.jpg" alt="">LS 500h 2WD </a><p>
+											HYBRID <span>|</span> 3,456cc <span>|</span>149,400,000원</p></li>
+                                    	    <li><a href="#"><img src="images/LS_500h-awd_car_type_A_1.jpg" alt="">LS 500h 2WD </a><p>
+											HYBRID <span>|</span> 3,456cc <span>|</span>149,400,000원</p></li>
+											<div class="sub_nav_bottom">
+												<h3>RECENT CONTENTS</h3>
+												<div class="snb_c1">
+													<img src="images/Contents_post_511001_thumb_B.jpg" width="240"  height="78" alt=""/>
+													<a href="">&nbsp;&nbsp;BRAND PHYLOSOPHY</a>
+												</div>
+												<div class="snb_c1">
+													<img src="images/2020CM_thumb_B@_1.jpg" width="240"  height="78" alt=""/>
+													<a href="">&nbsp;&nbsp;LEXUX CREATIVE MARSTERS AWARD 2019</a>
+												</div>
+											</div>
+                                    	</ul>
+                                    </div>
+                                </li>
+                               <li class="menu_tit">
+                                    <a href="#">ES</a>
+                                    <div class="twoD">
+                                    	<ul class="sub_nav">
+                                    	    <li><a href="#"><img src="images/ES_3000.jpg" alt="">LS 500h 2WD </a><p>
+											HYBRID <span>|</span> 3,456cc <span>|</span>149,400,000원</p></li>
+											<div class="sub_nav_bottom">
+												<h3>RECENT CONTENTS</h3>
+												<div class="snb_c1">
+													<img src="images/Contents_post_511001_thumb_B.jpg" width="240"  height="78" alt=""/>
+													<a href="">&nbsp;&nbsp;BRAND PHYLOSOPHY</a>
+												</div>
+												<div class="snb_c1">
+													<img src="images/2020CM_thumb_B@_1.jpg" width="240"  height="78" alt=""/>
+													<a href="">&nbsp;&nbsp;LEXUX CREATIVE MARSTERS AWARD 2019</a>
+												</div>
+											</div>
+                                    	</ul>
+                                    </div>
+                                </li>
+                                <li class="menu_tit">
+                                    <a href="#">IS</a>
+                                    <div class="twoD">
+                                    	<ul class="sub_nav">
+                                    	    <li><a href="#"><img src="images/IS_200t_car_type_A_2.jpg" alt="">LS 500h 2WD </a><p>
+											HYBRID <span>|</span> 3,456cc <span>|</span>149,400,000원</p>
+											</li>
+                                    	    <li><a href="#"><img src="images/IS_200t_F_SPORT_car_type_A_2.jpg" alt="">LS 500h 2WD </a>
+											<p>HYBRID <span>|</span> 3,456cc <span>|</span>149,400,000원</p></li>
+											<div class="sub_nav_bottom">
+												<h3>RECENT CONTENTS</h3>
+												<div class="snb_c1">
+													<img src="images/Contents_post_511001_thumb_B.jpg" width="240"  height="78" alt=""/>
+													<a href="">&nbsp;&nbsp;BRAND PHYLOSOPHY</a>
+												</div>
+												<div class="snb_c1">
+													<img src="images/2020CM_thumb_B@_1.jpg" width="240"  height="78" alt=""/>
+													<a href="">&nbsp;&nbsp;LEXUX CREATIVE MARSTERS AWARD 2019</a>
+												</div>
+											</div>
+                                    	</ul>
+                                    </div>
+                                </li>
+                                <li class="menu_tit">
+                                    <a href="#">RX</a>
+                                    <div class="twoD">
+                                    	<ul class="sub_nav">
+                                    	    <li><a href="#"><img src="images/RX-450h_type_A.jpg" alt="">LS 500h 2WD </a><p>
+											HYBRID <span>|</span> 3,456cc <span>|</span>149,400,000원</p></li>
+                                    	    <li><a href="#"><img src="images/RX-450hL_type_A_1.jpg" alt="">LS 500h 2WD </a><p>
+											HYBRID <span>|</span> 3,456cc <span>|</span>149,400,000원</p></li>
+                                    	    <li><a href="#"><img src="images/RX F SPORT_type_A.jpg" alt="">LS 500h 2WD </a><p>
+											HYBRID <span>|</span> 3,456cc <span>|</span>149,400,000원</p></li>
+											<div class="sub_nav_bottom">
+												<h3>RECENT CONTENTS</h3>
+												<div class="snb_c1">
+													<img src="images/Contents_post_511001_thumb_B.jpg" width="240"  height="78" alt=""/>
+													<a href="">&nbsp;&nbsp;BRAND PHYLOSOPHY</a>
+												</div>
+												<div class="snb_c1">
+													<img src="images/2020CM_thumb_B@_1.jpg" width="240"  height="78" alt=""/>
+													<a href="">&nbsp;&nbsp;LEXUX CREATIVE MARSTERS AWARD 2019</a>
+												</div>
+											</div>
+                                    	</ul>
+                                    </div>
+                                </li>
+                                <li class="menu_tit">
+                                    <a href="#">NX</a>
+                                    <div class="twoD">
+                                    	<ul class="sub_nav">
+                                    	    <li><a href="#"><img src="images/NX_300h_car_type_A_4.jpg" alt="">LS 500h 2WD </a><p>
+											HYBRID <span>|</span> 3,456cc <span>|</span>149,400,000원</p></li>
+                                    	    <li><a href="#"><img src="images/NX_300_car_type_A.jpg" alt="">LS 500h 2WD </a><p>
+											HYBRID <span>|</span> 3,456cc <span>|</span>149,400,000원</p></li>
+                                    	    <li><a href="#"><img src="images/NX_300_F_SPORT_car_type_A_2.jpg" alt="">LS 500h 2WD </a><p>
+											HYBRID <span>|</span> 3,456cc <span>|</span>149,400,000원</p></li>
+											<div class="sub_nav_bottom">
+												<h3>RECENT CONTENTS</h3>
+												<div class="snb_c1">
+													<img src="images/Contents_post_511001_thumb_B.jpg" width="240"  height="78" alt=""/>
+													<a href="">&nbsp;&nbsp;BRAND PHYLOSOPHY</a>
+												</div>
+												<div class="snb_c1">
+													<img src="images/2020CM_thumb_B@_1.jpg" width="240"  height="78" alt=""/>
+													<a href="">&nbsp;&nbsp;LEXUX CREATIVE MARSTERS AWARD 2019</a>
+												</div>
+											</div>
+                                    	</ul>
+                                    </div>
+                                </li>
+                                <li class="menu_tit">
+                                    <a href="#">UX</a>
+                                    <div class="twoD">
+                                    	<ul class="sub_nav">
+                                    	    <li><a href="#"><img src="images/UX1.jpg" alt="">LS 500h 2WD </a><p>
+											HYBRID <span>|</span> 3,456cc <span>|</span>149,400,000원</p></li>
+                                    	    <li><a href="#"><img src="images/UX2.jpg" alt="">LS 500h 2WD </a><p>
+											HYBRID <span>|</span> 3,456cc <span>|</span>149,400,000원</p></li>
+                                    	    <li><a href="#"><img src="images/UX3.jpg" width="240" alt="">LS 500h 2WD </a><p>
+											HYBRID <span>|</span> 3,456cc <span>|</span>149,400,000원</p></li>
+											<div class="sub_nav_bottom">
+												<h3>RECENT CONTENTS</h3>
+												<div class="snb_c1">
+													<img src="images/Contents_post_511001_thumb_B.jpg" width="240"  height="78" alt=""/>
+													<a href="">&nbsp;&nbsp;BRAND PHYLOSOPHY</a>
+												</div>
+												<div class="snb_c1">
+													<img src="images/2020CM_thumb_B@_1.jpg" width="240"  height="78" alt=""/>
+													<a href="">&nbsp;&nbsp;LEXUX CREATIVE MARSTERS AWARD 2019</a>
+												</div>
+											</div>
+                                    	</ul>
+                                    </div>
+                                </li>
+                                <li class="menu_tit">
+                                    <a href="#">CT</a>
+                                    <div class="twoD">
+                                    	<ul class="sub_nav">
+                                    	    <li><a href="#"><img src="images/CT_200h_Atype.jpg" alt="">LS 500h 2WD </a><p>HYBRID <span>|</span> 3,456cc <span>|</span>149,400,000원</p></li>
+                                    	    <li><a href="#"><img src="images/CT_200h_Fsport_Atype.jpg" alt="">LS 500h 2WD </a><p>HYBRID <span>|</span> 3,456cc <span>|</span>149,400,000원</p></li>
+											<div class="sub_nav_bottom">
+												<h3>RECENT CONTENTS</h3>
+												<div class="snb_c1">
+													<img src="images/Contents_post_511001_thumb_B.jpg" width="240"  height="78" alt=""/><a href="">&nbsp;&nbsp;BRAND PHYLOSOPHY</a>
+												</div>
+												<div class="snb_c1">
+													<img src="images/2020CM_thumb_B@_1.jpg" width="240"  height="78" alt=""/><a href="">&nbsp;&nbsp;LEXUX CREATIVE MARSTERS AWARD 2019</a>
+												</div>
+											</div>
+                                    	</ul>
+                                    </div>
+                                </li>
+                                <li class="menu_tit">
+                                    <a href="#">RC</a>
+                                    <div class="twoD">
+                                    	<ul class="sub_nav">
+                                    	    <li><a href="#"><img src="images/RC_F_car_type_A@_1.jpg" alt="">LS 500h 2WD </a><p>
+											HYBRID <span>|</span> 3,456cc <span>|</span>149,400,000원</p></li>
+											<div class="sub_nav_bottom">
+												<h3>RECENT CONTENTS</h3>
+												<div class="snb_c1">
+													<img src="images/Contents_post_511001_thumb_B.jpg" width="240"  height="78" alt=""/>
+													<a href="">&nbsp;&nbsp;BRAND PHYLOSOPHY</a>
+												</div>
+												<div class="snb_c1">
+													<img src="images/2020CM_thumb_B@_1.jpg" width="240"  height="78" alt=""/>
+													<a href="">&nbsp;&nbsp;LEXUX CREATIVE MARSTERS AWARD 2019</a>
+												</div>
+											</div>
+                                    	</ul>
+                                    </div>
+                                </li>
+                                <li class="menu_tit">
+                                    <a href="#">LC</a>
+                                    <div class="twoD">
+                                    	<ul class="sub_nav">
+                                    	    <li><a href="#"><img src="images/LC_500_car_type_A.jpg" alt="">LS 500h 2WD </a><p>
+											HYBRID <span>|</span> 3,456cc <span>|</span>149,400,000원</p></li>
+                                    	    <li><a href="#"><img src="images/LC_500h_car_type_A.jpg" alt="">LS 500h 2WD </a><p>
+											HYBRID <span>|</span> 3,456cc <span>|</span>149,400,000원</p></li>
+											<div class="sub_nav_bottom">
+												<h3>RECENT CONTENTS</h3>
+												<div class="snb_c1">
+													<img src="images/Contents_post_511001_thumb_B.jpg" width="240"  height="78" alt=""/>
+													<a href="">&nbsp;&nbsp;BRAND PHYLOSOPHY</a>
+												</div>
+												<div class="snb_c1">
+													<img src="images/2020CM_thumb_B@_1.jpg" width="240"  height="78" alt=""/>
+													<a href="">&nbsp;&nbsp;LEXUX CREATIVE MARSTERS AWARD 2019</a>
+												</div>
+											</div>
+                                    	</ul>
+                                    </div>
+                                </li>
+                                <li class="menu_tit">
+                                    <a href="#">FUTURE</a>
+                                    <div class="twoD">
+                                    	<ul class="sub_nav">
+                                    	    <li><a href="#"><img src="images/concept_LF-1_car_type_A.jpg" alt="">LS 500h 2WD </a><p>
+											HYBRID <span>|</span> 3,456cc <span>|</span>149,400,000원</p></li>
+                                    	    <li><a href="#"><img src="images/concept_LSplus_car_type_A.jpg" alt="">LS 500h 2WD </a><p>
+											HYBRID <span>|</span> 3,456cc <span>|</span>149,400,000원</p></li>
+                                    	    <li><a href="#"><img src="images/concept_LF-FC_car_type_A_1.jpg" alt="">LS 500h 2WD </a><p>
+											HYBRID <span>|</span> 3,456cc <span>|</span>149,400,000원</p></li>
+                                    	    <div class="block">
+                                    	    	<ul>
+													<li>
+													<img src="images/concept_LF-SA_car_type_A_1.jpg" alt="">
+													<a href="#">LS 500h 2WD </a>
+													<p>HYBRID <span>|</span> 3,456cc <span>|</span>149,400,000원</p>
+													</li>
+													<li>
+													<img src="images/concept_LF-C2_car_type_A_2.jpg" alt="">
+													<a href="#">LS 500h 2WD </a>
+													<p>HYBRID <span>|</span> 3,456cc  <span>|</span>149,400,000원</p>
+													</li>
+												</ul>
+											<div class="sub_nav_bottom">
+												<h3>RECENT CONTENTS</h3>
+												<div class="snb_c1">
+													<img src="images/Contents_post_511001_thumb_B.jpg" width="240"  height="78" alt=""/>
+													<a href="">&nbsp;&nbsp;BRAND PHYLOSOPHY</a>
+												</div>
+												<div class="snb_c1">
+													<img src="images/2020CM_thumb_B@_1.jpg" width="240"  height="78" alt=""/>
+													<a href="">&nbsp;&nbsp;LEXUX CREATIVE MARSTERS AWARD 2019</a>
+												</div>
+											</div>
+                                    	</ul>
+                                    </div>
+                                </li>
+                                 <li class="line">
+                                    <a href="#"></a>
+                                </li>
+                                <li class="menu_tit">
+                                    <a href="#"><span>공식인증중고차</span></a>
+                                    <div class="twoD">
+                                    	<ul class="sub_nav">
+                                    	   <div class="sub_tit">
+                                    	    	<h2>LEXUS CERTIFIED</h2> 
+												<h4>PRE OWNED AUTOMOBILE</h4>
+                                    	    </div>
+                                    	    <div class="sub_menu">
+                                    	    	<p class="menu_t">오직 신뢰와 품질을 최우선으로 생각하는 LEXUS CERTIFIED 191가지 엄격한 기준에 <br/> 의한 품질 및 기술 검사를 실시하여 최상의 품질을 보장하고 추가 보증 서비스부터 <br/>  렉서스 프리미엄 멤버십까지 최고의 혜택을 제공합니다. 차량 구매부터 판매까지  <br/> 안심하고 편리하게 이용하실 수 있도록 도와드립니다.
+												<br/>
+												<br/>
+												<span><button class="oulink"><a href="#"><img src="images/icon_outlink.svg" alt=""/>렉서스공식인증중고차바로가기</a></button></span>
+												</p>
+                                    	    </div>
+											<div class="sub_nav_bottom">
+												<h3>RECENT CONTENTS</h3>
+												<div class="snb_c1">
+													<img src="images/Contents_post_511001_thumb_B.jpg" width="240"  height="78" alt=""/>
+													<a href="">&nbsp;&nbsp;BRAND PHYLOSOPHY</a>
+												</div>
+												<div class="snb_c1">
+													<img src="images/2020CM_thumb_B@_1.jpg" width="240"  height="78" alt=""/>
+													<a href="">&nbsp;&nbsp;LEXUX CREATIVE MARSTERS AWARD 2019</a>
+												</div>
+											</div>
+                                    	</ul>
+                                    </div>
+                                </li>
+                                <li class="menu_tit">
+                                    <a href="#"><span class="ma_lf">법인전용프로그램</span></a>
+                                    <div class="twoD">
+                                    	<ul class="sub_nav">
+											<div class="sub_tit">
+                                    	    	<h2>LEXUS AUTO CARE LEASE</h2> 
+												<h4>렉서스 법인 전용 프로그램 </h4>
+                                    	    </div>
+											<div class="sub_menu">
+                                    	    	<p class="menu_t">
+												차량을 직접 구매하지 않고, 매월 일정액의 이용료만 내면 각종 세금 및 렉서스만의<br/> 고품격 차량 유지 관리 서비스 등을 받으며 편리한 비즈니스 라이프를 즐길 수 있는<br/> 운용리스 프로그램입니다.
+												<br/>
+												<br/>
+												<span><button><a href="">렉서스 오토 케어 리스 바로가기</a></button></span>
+												</p>
+                                    	    </div>
+											<div class="sub_nav_bottom">
+												<h3>RECENT CONTENTS</h3>
+												<div class="snb_c1">
+													<img src="images/Contents_post_511001_thumb_B.jpg" width="240"  height="78" alt=""/>
+													<a href="">&nbsp;&nbsp;BRAND PHYLOSOPHY</a>
+												</div>
+												<div class="snb_c1">
+													<img src="images/2020CM_thumb_B@_1.jpg" width="240"  height="78" alt=""/>
+													<a href="">&nbsp;&nbsp;LEXUX CREATIVE MARSTERS AWARD 2019</a>
+												</div>
+											</div>
+                                    	</ul>
+                                    </div>
+                                </li> 
+                            </ul>
+							<div id="side_menu_mobile">
+								<ul>
+									<li>
+									<a href="#"><img src="images/icon_quick_benefit.svg" width="23" height="24" alt="">&nbsp;구매혜택</a>
+									</li>
+									<li><a href="#"><img src="images/icon_quick_estn.svg" width="29" height="24"alt="">&nbsp;견적조회</a></li>
+									<li><a href="#"><img src="images/icon_quick_drive.svg" width="21" height="24" alt="">시승 신청</a></li>
+									<li><a href="#"><img src="images/icon_quick_showroom.svg" width="17" height="24" alt="">전시장조회</a></li>
+									<li><a href="#"><img src="images/icon_quick_service.svg"  width="24" height="24"alt="">고객서비스</a></li>
+									<li><a href="#"><img src="images/icon_quick_connect_to.svg"  width="23" height="24" alt="">&nbsp;커넥트루</a></li>
+								</ul>
+							</div>
+                        </div>
+						<div id="mobile_nav">
+							<ul>
+								<li>
+									<a class="m_btn" href="#"><img src="images/menu_ico.png" alt=""/></a>
+									<ul class="m_twoD">
+										<li>LS</li>
+										<li>ES</li>
+										<li>IS</li>
+										<li>RX</li>
+										<li>NX</li>
+										<li>UX</li>
+										<li>CT</li>
+										<li>RC</li>
+										<li>LC</li>
+										<li>FUTURE</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+                    </div>
+				</div>
+				<div id="bottom_menu_mobile">
+					<ul>
+						<li><a href="#"><img src="images/icon_quick_benefit.svg" width="23" height="24" alt="">&nbsp;구매혜택</a></li>
+						<li><a href="#"><img src="images/icon_quick_estn.svg" width="29" height="24"alt="">&nbsp;견적조회</a></li>
+						<li><a href="#"><img src="images/icon_quick_drive.svg" width="21" height="24" alt="">시승 신청</a></li>
+						<li><a href="#"><img src="images/icon_quick_showroom.svg" width="17" height="24" alt="">전시장조회</a></li>
+						<li><a href="#"><img src="images/icon_quick_service.svg"  width="24" height="24"alt="">고객서비스</a></li>
+						<li><a href="#"><img src="images/icon_quick_connect_to.svg"  width="23" height="24" alt="">&nbsp;커넥트루</a></li>
+					</ul>
+				</div>
+			</div>
+		 </header>
+		 <section id="main">
+			<div id="mainBanner">
+				<div class="container">
+					  <div class="swiper-container">
+						<div class="swiper-wrapper">
+						  <div class="swiper-slide">
+								<div class="txt_white">
+									<h1>2021 LEXUS CREATIVE MASTERS AWARD</h1>
+									<div class="bannerline"><hr color="white" size="1"/></div>
+									<h2>접수 기간: 10월 19일 ~ 11월 8일
+									 <br/>공예의 내일을 이끌 제품을 기다립니다
+									</h2>
+								</div>
+								<div class="main_bottom play" id="showTrailer" data-youtube="xLX2qniGLUc">
+									<div class="container">
+										<div class="playBtn"><img src="images/mango_playicon.png" alt="playBtn"/></div>
+									</div>
+								</div>
+								<aside id="blackout" class="overlay">
+									<div id="trailerModal" class="modal">
+										<div id="trailer"></div>
+									</div>
+									<button id="hideTrailer" class="modal_colse">닫기</button>
+								</aside>
+						  </div>
+						  <div class="swiper-slide">
+								<div class="swiper_txt">
+									<h1>21년형 ES 3000h</h1>
+									<div class="bannerline"><hr color="black" size="1"/></div>
+									<h2>2개의 모터로 당신의 심장을 뛰게하는 하이브리드
+									<br/>Hybrid Electric ES 3000h
+								</div>
+							</div>
+						  <div class="swiper-slide">
+								<div class="txt_white"><h1>LEXUS ELECTRIFIED</h1>
+									<div class="bannerline"><hr color="white" size="1"/></div>
+									<h2>렉서스는 미래의 변혁을 준비합니다.
+									<br/>렉서스가 꿈꾸는 전동화의 비전을 지금 확인해보세요.
+								</div>
+							</div>
+						  <div class="swiper-slide">
+							<h1>2021 NEW NX</h1>
+								<div class="bannerline"><hr color="black" size="1"/></div>
+								<h2>일상이 여행이 되다
+								<br/>Experience Safety 2021 NEW NX
+						  </div>
+						  <div class="swiper-slide">
+							<div class="txt_white">
+								<h1>RX 450h F SPORT</h1>
+								<div class="bannerline"><hr color="white" size="1"/></div>
+								<h2>ADVANCED DYNAMIC
+								<br/>RX 450h F SPORT 출시
+							</div>
+						  </div>
+						  <div class="swiper-slide">
+							<div class="txt_white">
+							<h1>LEXUS AUTO CARE LEASE</h1>
+								<div class="bannerline"><hr color="white" size="1"/></div>
+								<h2>렉서스가 새롭게 선보이는 법인 전용 프로그램
+								<br/>당신의 비즈니스 라이프를 스마트하게 즐기는 방법
+							</div>
+						  </div>
+						</div>
+						<!-- Add Pagination -->
+						<div class="swiper-pagination"></div>
+						<!-- Add Arrows -->
+						<div class="swiper-button-next"></div>
+						<div class="swiper-button-prev"></div>
+					</div>
+				</div>
+		</section>
+		<section id="content">
+			<div class="container">
+			  	<div class="hashTag">
+			  			<ul>
+			  				<li class="hashtag_on"><a href="#"><strong>#All</strong></a></li>
+			  				<li><a href="#">#HYBRID</a></li>
+			  				<li><a href="#">#장인정신</a></li>
+			  				<li><a href="#">#EXPERIENCE AMAZING</a></li>
+			  				<li><a href="#">#BRAND STORY</a></li>
+			  			</ul>
+			  		</div>
+					<div class="content1">
+						<div class="contens_box">
+							<div class="box">
+								<div class="img">
+									<div class="scale"><img src="images/benefit_purchase_hybrid_thumb_B.jpg" alt=""/></div>
+								</div>
+								<div class="img_txt">
+									<h2>하이브리드 구매혜택</h2>
+									<p class="img_txt_p">하이브리드 차량 구매 시 세금 감면 및<br/>각종이용료 할인을 지원받을수있으며 렉서스<br/>판매차량에 한해 하이브리드 메인배터리 보증<br/>서비스를 제공합니다.</p>
+								</div>
+							</div>
+						</div>
+						<div class="contens_box">
+							<div class="img">
+								<div class="scale"><img src="images/Contents_post_511001_thumb_B.jpg" alt=""/></div>
+							</div>
+							<div class="img_txt">
+								<h2>LEXUS ELECTRIFIED</h2>
+								<p class="img_txt_p">렉서스는 미래의 변혁을 준비합니다.<br/>
+									렉서스가 꿈꾸는 전동화의 비전을 지금<br/> 확인해 보세요.
+							</div>
+						</div>
+						<div class="contens_box">
+							<div class="img">
+								<div class="scale"><img src="images/lemon_law_typeB.jpg" alt=""/></div>
+							</div>
+							<div class="img_txt">
+								<h2>렉서스 고객<br/>서비스 프로그램</h2>
+								<p class="img_txt_p">렉서스 전문 테크니션의 믿을 수 있는<br/> 서비스를 경험하세요.또한 렉서스는 10년<br/> 무상 24시간 긴급 출동 서비스를 운영합니다.
+							</div>
+						</div>
+					</div>
+			  	</div>
+		</section>
+		<section id="subBanner">
+			<div class="container">
+				<div class="s_banner bg">
+					<div class="s_banner_txt">
+						<h3 class="sb_tit">2020 상반기 한국경제 수입차 서비스 '종합평가' 1위<br/>
+						<span>렉서스가 2020 상반기한국경제 수입차 서비스 지수 평가에서 ‘종합 평가’ 1위에 올랐습니다. <br/>
+						늘 최선을 다하는 서비스로 고객님들께 보답하겠습니다.
+						</span></h3>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="content2">
+			<div class="container">
+				<div class="img_box2 fadeinleft">
+					<ul>
+						<li><a href=""></a></li>
+						<li><a href=""></a></li>
+						<li><a href=""></a></li>
+						<li><a href=""></a></li>
+					</ul>
+				</div>
+				<div class="txt_box2 fadeinleft">
+					<ul>
+						<li><a href="#">하이브리드 구매혜택</a><p>하이브리드 차량 구매 시 세금 감면 및 각종 이용료 할인을 받으실 수 있습니다.</p></li>
+						<li><a href="#">CONNECT TO</a><p>복합문화공간 커넥트투에서 렉서스가 제안하는 라이프스타일을 경험하세요.</p></li>
+						<li><a href="#">자동차 교환/환불제도(레몬법)</a><p>하이브리드 차량 구매 시 세금 감면 및 각종 이용료 할인을 받으실 수 있습니다.</p></li>
+						<li><a href="#">BRAND NEWS</a><p>렉서스의 브랜드 연혁, 사회공헌 소식 등 다양한 렉서스의 활동과 소식들을 한눈에 확인해 보세요.</p></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<section id="content3">
+			<div class="container">
+				<div class="img_box3  fadeinleft">
+					<ul>
+						<li><a href=""></a></li>
+						<li><a href=""></a></li>
+						<li><a href=""></a></li>
+						<li><a href=""></a></li>
+					</ul>
+				</div>
+				<div class="txt_box3 fadeinleft">
+					<ul>
+						<li><a href="#">HISTORY OF CIRCLE F</a><p>렉서스는 세계 최고의 프래그십 자동차를 향한 도전, CIRCLE F 프로젝트로 부터 시작되었습니다.</p></li>
+						<li><a href="#">THE CHAMPAGNE GLASS</a><p>샴페인 잔으로 예고한 조용한 파격, 렉서스 LS의 정숙성은 차 후드 위에 올려진 샴페인 잔과 함께 세상에 알려졌습니다.</p></li>
+						<li><a href="#">38일, 67단계의 제작과정</a><p>정교한 공정과 기술력으로 제작되어 손 끝에서 완성되는 시마모쿠 우드는 하나의 예술 작품에 가깝습니다.</p></li>
+						<li><a href="#">BRAND PHILOSOPHY</a><p>렉서스의 브랜드 철학, 고객을 감동시키는 놀라운 경험을 위한 4가지 핵심 가치를 소개합니다.</p></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<button class="moreBtn">more+</button>
+		<section id="content4">
+			<div class="container">
+				<div class="img_box4">
+					<ul>
+						<li><a href=""></a></li>
+						<li><a href=""></a></li>
+						<li><a href=""></a></li>
+						<li><a href=""></a></li>
+					</ul>
+				</div>
+				<div class="txt_box4">
+					<ul>
+						<li><a href="#">YOUNG FARMERS</a><p>고구마 등의 작물을 재배하는 장슬기 농부님의 친환경 자연순환농업 이야기를 확인해 보세요.</p></li>
+						<li><a href="#">KLPGA 프로 3인방 with RX 450hL</a><p>LEXUS RX L의 홍보대사 KLPGA(한국여자프로골프협회) 프로 선수들이 말하는 렉서스 RX L 이야기를 만나보세요.</p></li>
+						<li><a href="#">LIFESTYLE DAY at HOME</a><p>집에서 즐기는 핸드드립 커피, 바리스타가 알려드리는 추출 방법을 따라 집에서도 간편히 즐겨 보세요.</p></li>
+						<li><a href="#">LEXUS RX L 타보고서</a><p>길어진 차체와 넓어진 공간, 향상된 편의 및 안전사양으로 탄생한 PREMIUM HYBRID SUV LEXUS RX 450hL을 영상으로 만나보세요.</p></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<footer>
+			<div class="container">
+				<div class="footer_text">
+					<p class="title">L E X U S E X P E R I E N C E</p>
+					<div class="hashTag2">
+			  			<ul>
+			  				<li><a href="#">#HYBRID</a></li>
+			  				<li><a href="#">#장인정신</a></li>
+			  				<li><a href="#">#EXPERIENCE AMAZING</a></li>
+			  				<li><a href="#">#BRAND STORY</a></li>
+			  			</ul>
+			  		</div>
+					<div class="untill">
+						<ul>
+							<li><a href="#"><img src="images/icon_facebook.svg" width="20" height="20" alt=""/></a></li>
+							<li><a href="#"><img src="images/icon_instagram.svg" width="20" height="20" alt=""/></a></li>
+							<li><a href="#"><img src="images/icon_naver_post.svg" width="20" height="20" alt=""/></a></li>
+							<li><a href="#"><img src="images/icon_youtube.svg" width="20" height="20" alt=""/></a></li>
+						</ul>
+					</div>
+					<div class="footer_text2">
+						<ul>
+							<li><a href="#">LEXUS INTERNATIONAL </a></li>
+							<li><a href="#"> ABOUT LEXUS </a></li>
+							<li><a href="#"><strong>개인정보처리방침</strong> </a></li>
+							<li><a href="#"> 법적고지 </a></li>
+						</ul>
+					</div>
+					<p class="last">TOYOTA MOTOR KOREA © 2017</p>
+				</div>
+			</div>
+			<div class="last"></div>
+		</footer>
+  </div>	
+</body>
+</html>
